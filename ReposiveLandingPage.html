@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Landing Page</title>
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a002b, #1b3ca2);
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      transition: 0.4s ease;
+      z-index: 999;
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      color: #ffcb05;
+      text-shadow: 0 0 10px #ffcb05;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ffcb05, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #e3e3e3;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .hero .btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #ffcb05, #ff6b6b);
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .hero .btn:hover {
+      background: linear-gradient(90deg, #fff, #ffcb05);
+      transform: scale(1.05);
+    }
+
+    /* ===== FEATURES SECTION ===== */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 80px 20px;
+      background: #0a0a3a;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      width: 280px;
+      margin: 20px;
+      padding: 30px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-card h3 {
+      color: #ffcb05;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #ddd;
+      font-size: 15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 15px 25px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="logo">MyBrand</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <h1>Welcome to My Landing Page</h1>
+    <p>
+      Create an interactive navigation menu that changes color when scrolled or when hovering over a menu item.
+      The menu has a fixed position and is visible across all pages.
+    </p>
+    <button class="btn">Learn More</button>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section class="features" id="services">
+    <div class="feature-card">
+      <h3>HTML</h3>
+      <p>Used to structure the content of your web page and define the layout of elements.</p>
+    </div>
+    <div class="feature-card">
+      <h3>CSS</h3>
+      <p>Used to style the layout, colors, typography, and responsiveness of the page.</p>
+    </div>
+    <div class="feature-card">
+      <h3>JavaScript</h3>
+      <p>Adds interactivity such as hover effects, scroll animations, and dynamic styling.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2025 Prodigy Infotech | Designed by You
+  </footer>
+
+  <script>
+    // Change navbar style when scrolling
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
